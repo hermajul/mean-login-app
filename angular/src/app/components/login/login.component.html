@@ -1,0 +1,39 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <form class="login-form">
+            <mat-card class="login-card">
+                <mat-card-header>                    
+                    <mat-card-title>Login</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>                    
+                        <mat-form-field >
+                          <input matInput placeholder="Email" [(ngModel)]="user.email" name="email">
+                        </mat-form-field>
+                        <br>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="Password" [type]="!hide ? 'password' : 'text'" [(ngModel)]="user.password" name="password">
+                            <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        </mat-form-field>  
+                        <br>
+                        <mat-error *ngIf="!this.response.success">{{this.response.msg}}</mat-error>                    
+                  </mat-card-content>
+                  <mat-card-actions align="end">
+                    <button  mat-raised-button color="primary" (click)="submit()">Login</button>
+                  </mat-card-actions>
+              </mat-card>
+            </form>
+        </div>       
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <mat-card class="login-card">
+                <mat-card-content>  
+                  No account? <a [routerLink]="['/signup']" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">create an account.</a>                                   
+                </mat-card-content>
+              </mat-card>
+        </div>       
+    </div>
+  </div>

@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <form class="login-form">
+            <mat-card class="login-card">
+                <mat-card-header>                    
+                    <mat-card-title>User Info</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                        <mat-form-field >
+                                <input matInput placeholder="Name" [formControl]="nameControl" required>
+                                <mat-error *ngIf="nameControl.hasError('nameValidator')">{{nameControl.errors.nameValidatorMsg}}</mat-error>
+                            </mat-form-field>                        
+                            <br>
+                            <br>                    
+                            <mat-form-field >
+                                <input matInput placeholder="Email" [formControl]="emailControl" required>
+                                <mat-error *ngIf="emailControl.hasError('emailValidator')">{{this.emailControl.errors.emailValidatorMsg}}</mat-error>
+                            </mat-form-field>  
+                            <br>
+                            <br>
+                            <mat-form-field>
+                                <input matInput placeholder="Password" [type]="!hide ? 'password' : 'text'" [formControl]="pwControl" required>
+                                <mat-icon matSuffix (click)="hide = !hide">{{!hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                                <mat-error *ngIf="pwControl.hasError('pwValidator')"><span *ngFor="let item of pwControl.errors.pwValidatorMsg">{{item}}<br></span></mat-error>   
+                            </mat-form-field>                     
+                  </mat-card-content>
+                  <mat-card-actions align="end">
+                    <button  mat-raised-button color="primary" *ngIf="!edit"(click)="editMode(true)"><mat-icon>create</mat-icon> edit</button>
+                    <button  mat-raised-button color="primary" *ngIf="edit" (click)="editMode(false)">discard changes</button>
+                    <button  mat-raised-button color="primary" *ngIf="edit" (click)="submit()" [disabled]="!nameControl.valid || !emailControl.valid || !pwControl.valid">save changes</button>
+                  </mat-card-actions>
+              </mat-card>
+            </form>
+        </div>       
+    </div>
+  </div>

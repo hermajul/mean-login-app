@@ -1,0 +1,48 @@
+<mat-sidenav-container class="sidenav-container" fullscreen>
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="isHandset ? 'dialog' : 'navigation'"
+    [mode]="(isHandset | async) ? 'over' : 'side'"
+    [opened]="!(isHandset | async)">
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list> 
+        <!-- list items when user not logged in-->
+        <a mat-list-item [routerLink]="['']" *ngIf="!authService.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">Login</a>
+        <a mat-list-item [routerLink]="['/signup']" *ngIf="!authService.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">Signup</a>    
+        <!-- list items when user logged in-->
+        <a mat-list-item [routerLink]="['/profile']" *ngIf="authService.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">Profile</a>
+        <a mat-list-item [routerLink]="['/dashboard']" *ngIf="authService.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions] = "{exact:true}">Dashboard</a>  
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <i class="material-icons">menu</i>
+      </button>
+      <span>angular</span>
+      <span class="fill-remaining-space"></span>
+
+      <button mat-button *ngIf="authService.isLoggedIn()" [matMenuTriggerFor]="menu" ><i class="material-icons">account_circle</i></button>          
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item disabled >
+          <span *ngIf="authService.user!=null">{{authService.user.name}}</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>email</mat-icon>
+          <span *ngIf="authService.user!=null">{{authService.user.email}}</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar>
+    <router-outlet></router-outlet>    
+  </mat-sidenav-content>
+</mat-sidenav-container>
