@@ -1,3 +1,4 @@
+/* eslint no-console: ["error", { allow: ["info", "error"] }] */
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -7,22 +8,21 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 const config = require('./config/config');
 
-mongoose.connect(config.db,{ useNewUrlParser: true });
+mongoose.connect(config.db, { useNewUrlParser: true });
 mongoose.connection.on('connected', () => {
-  console.log('Connected to Database: '+config.db);
+  console.info(`Connected to Database: ${config.db}`);
 });
 mongoose.connection.on('error', (err) => {
-  console.log('Error on Databaseconnection: '+err);
+  console.error(`Error on Databaseconnection: ${err}`);
 });
 
 const app = express();
 
-//Routes
+// Routes
 const users = require('./routes/users');
 const dashboard = require('./routes/dashboard');
-//Port
+// Port
 const port = (process.env.PORT || 3000);
-
 
 
 // Middleware
@@ -53,7 +53,7 @@ app.get('*', (req, res) => {
 
 // Server start on port
 app.listen(port, () => {
-  console.log('Server started on port '+port);
+  console.info(`Server started on port ${port}`);
 });
 
 module.exports = app;

@@ -74,6 +74,8 @@ export class ProfileComponent implements OnInit {
               user = null;
               this.newuser['password'] = "";
               this.pwControl.setValue("");
+              this.nameControl.setValue(this.authService.user['name']);
+              this.emailControl.setValue(this.authService.user['email']);
             } else {
               this.response = res;
             }
@@ -100,7 +102,7 @@ export class ProfileComponent implements OnInit {
   }
 
   emailValidator(control: AbstractControl) {
-    var msg = {email:control.value,id:this.authService.user._id};
+    var msg = {newEmail:control.value,oldEmail:this.authService.user.email};
     return this.validService.checkEmailOnUpdate(msg)
     .pipe(  map( response => response.json()),
             map( val => {
