@@ -1,0 +1,30 @@
+{
+  "name": "authappmeanstack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Example App for MEANstack Authentication",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "4.16.4",
+    "mongoose": "5.3.4",
+    "bluebird": "3.5.2",
+    "bcryptjs": "2.4.3",
+    "cors": "2.8.4",
+    "jsonwebtoken": "8.1.0",
+    "body-parser": "1.18.2",
+    "passport": "0.4.0",
+    "passport-jwt": "4.0.0",
+    "webpack": "4.21.0",
+    "email-validator": "2.0.4",
+    "password-validator": "4.1.1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@angular/cli": "7.0.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
