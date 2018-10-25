@@ -5,7 +5,8 @@
   "description": "Example App for MEANstack Authentication",
   "main": "app.js",
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "test": "./node_modules/mocha/bin/mocha --timeout 5000 test/test.js"
   },
   "dependencies": {
     "express": "4.16.4",
@@ -19,9 +20,10 @@
     "passport-jwt": "4.0.0",
     "webpack": "4.21.0",
     "email-validator": "2.0.4",
-    "password-validator": "4.1.1"
+    "password-validator": "4.1.1",
+    "validator": "10.8.0"
   },
-  "author": "",
+  "author": "hermajul",
   "license": "MIT",
   "devDependencies": {
     "@angular/cli": "7.0.1",
@@ -33,6 +35,9 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "mocha": "5.2.0",
+    "chai": "4.2.0",
+    "request": "2.88.0"
   }
 }

@@ -1,4 +1,4 @@
 module.exports = {
-  db: 'mongodb://localhost:27017/todo', 
-  secret: 'topsecret'
-}
+  db: 'mongodb://localhost:27017/todo',
+  secret: 'topsecret',
+};

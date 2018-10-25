@@ -1,4 +1,3 @@
-/* eslint no-console: ["error", { allow: ["info", "error"] }] */
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -6,6 +5,7 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
+mongoose.set('useFindAndModify', false);
 const config = require('./config/config');
 
 mongoose.connect(config.db, { useNewUrlParser: true });
@@ -20,6 +20,7 @@ const app = express();
 
 // Routes
 const users = require('./routes/users');
+const validators = require('./routes/validators');
 const dashboard = require('./routes/dashboard');
 // Port
 const port = (process.env.PORT || 3000);
@@ -40,6 +41,7 @@ require('./config/passport')(passport);
 
 app.use('/users', users);
 app.use('/dashboard', dashboard);
+app.use('/validators', validators);
 
 
 // Index

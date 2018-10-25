@@ -36,7 +36,7 @@ module.exports.addUser = function addUser(newUser, callback) {
   });
 };
 module.exports.updateUser = function updateUser(newuser, olduser, callback) {
-  var user = newuser;
+  const user = newuser;
   bcrypt.genSalt(10, (err, salt) => {
     bcrypt.hash(user.password, salt, (error, hash) => {
       if (error) throw error;
@@ -46,7 +46,7 @@ module.exports.updateUser = function updateUser(newuser, olduser, callback) {
   });
 };
 module.exports.deleteUser = function deleteUser(user, callback) {
-  User.findByIdAndRemove(user._id, callback);
+  User.findOneAndDelete({ email: user.email }, callback);
 };
 module.exports.comparePassword = function comparePassword(candidatePassword, hash, callback) {
   bcrypt.compare(candidatePassword, hash, (err, isMatch) => {

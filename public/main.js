@@ -936,22 +936,22 @@ var ValidationService = /** @class */ (function () {
     ValidationService.prototype.checkName = function (name) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('users/namevalidator', name, { headers: headers });
+        return this.http.post('validators/namevalidator', name, { headers: headers });
     };
     ValidationService.prototype.checkEmail = function (email) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('users/emailvalidator', email, { headers: headers });
+        return this.http.post('validators/emailvalidator', email, { headers: headers });
     };
     ValidationService.prototype.checkEmailOnUpdate = function (email) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('users/emailonupdatevalidator', email, { headers: headers });
+        return this.http.post('validators/emailonupdatevalidator', email, { headers: headers });
     };
     ValidationService.prototype.checkPw = function (pw) {
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('users/pwvalidator', pw, { headers: headers });
+        return this.http.post('validators/pwvalidator', pw, { headers: headers });
     };
     ValidationService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
