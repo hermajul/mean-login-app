@@ -9,7 +9,8 @@ const validators = require('../scripts/validators');
 * - only letters are accepted
 *
 * @api {post} /validators/namevalidator
-* @apiName validators
+* @apiGroup validators
+* @apiName namevalidator
 * @apiHeader (header) {String} Content-Type 'application/json'.
 * @apiParam {JSON} body { name: 'John Doe' }
 * @apiSuccess {JSON} body When message is valid returns one of the following:
@@ -28,7 +29,8 @@ router.post('/namevalidator', (req, res) => {
 * This function checks if the submitted email is a valid and not used
 *
 * @api {post} /validators/emailvalidator
-* @apiName validators
+* @apiGroup validators
+* @apiName emailvalidator
 * @apiHeader (header) {String} Content-Type 'application/json'.
 * @apiParam {JSON} body {email:'John@Doe.de'}
 * @apiSuccess {JSON} body When message is valid returns:
@@ -52,7 +54,8 @@ router.post('/emailvalidator', (req, res) => {
 * (only for the user update)
 *
 * @api {post} /validators/emailonupdatevalidator
-* @apiName validators
+* @apiGroup validators
+* @apiName emailonupdatevalidator
 * @apiHeader (header) {String} Content-Type 'application/json'.
 * @apiParam {JSON} body {email:'John@Doe.de'}
 * @apiSuccess {JSON} body When message is valid returns:
@@ -77,7 +80,8 @@ router.post('/emailonupdatevalidator', (req, res) => {
 * This function checks if the submitted password is a valid
 *
 * @api {post} /validators/pwvalidator
-* @apiName validators
+* @apiGroup validators
+* @apiName pwvalidator
 * @apiHeader (header) {String} Content-Type 'application/json'.
 * @apiParam {JSON} body {pw:'passw0rt'}
 * @apiSuccess {JSON} body When message is valid returns:

@@ -10,7 +10,8 @@ const validators = require('../scripts/validators');
 * Register a new User
 *
 * @api {post} /users/signup
-* @apiName users
+* @apiGroup users
+* @apiName signup
 * @apiHeader (header) {String} Content-Type 'application/json'.
 * @apiParam {JSON} body { name: 'John Doe', email: 'John@doe.de, password: 'passw0rd }
 * @apiSuccess {JSON} body When message is valid returns one of the following:
@@ -60,7 +61,8 @@ router.post('/signup', (req, res) => {
 * Update a existing user
 *
 * @api {post} /users/update
-* @apiName users
+* @apiGroup users
+* @apiName update
 * @apiHeader (header) {String} Content-Type 'application/json'.
 * @apiHeader (header) {String} Authorization jwt.
 * @apiParam {JSON} body { name: 'John Doe', email: 'John@doe.de, password: 'passw0rd }
@@ -114,7 +116,8 @@ router.post('/update', passport.authenticate('jwt', { session: false }), (req, r
 * Signin a existing user and get a token
 *
 * @api {post} /users/signin
-* @apiName users
+* @apiGroup users
+* @apiName signin
 * @apiHeader (header) {String} Content-Type 'application/json'.
 * @apiParam {JSON} body { email: 'John@doe.de, password: 'passw0rd }
 * @apiSuccess {JSON} body When message is valid returns one of the following:
@@ -165,7 +168,8 @@ router.post('/signin', (req, res) => {
 * Delete a existing user
 *
 * @api {post} /users/delete
-* @apiName users
+* @apiGroup users
+* @apiName delete
 * @apiHeader (header) {String} Content-Type 'application/json'.
 * @apiHeader (header) {String} Authorization jwt.
 * @apiSuccess {JSON} body When message is valid returns one of the following:
