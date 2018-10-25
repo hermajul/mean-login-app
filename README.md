@@ -29,4 +29,6 @@ npm test
 
 ### Screenshots
 ![signup](https://user-images.githubusercontent.com/25501536/47513994-ae35ae80-d87f-11e8-9282-5b146d09fe4a.png)
+![profile](https://user-images.githubusercontent.com/25501536/47514057-cc031380-d87f-11e8-8255-98ab761cdc44.png)
+![menu](https://user-images.githubusercontent.com/25501536/47514059-cc031380-d87f-11e8-9ed7-01ae14cb62f9.png)
 
