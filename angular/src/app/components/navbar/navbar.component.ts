@@ -11,20 +11,20 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);  
+  isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
 
   constructor(
-    private authService       : AuthenticationService,
+    private authService: AuthenticationService,
     private breakpointObserver: BreakpointObserver,
-    private router            : Router
+    private router: Router
   ) { }
 
   ngOnInit() {
-    if(this.authService.isLoggedIn()){
-      //this.router.navigate(['/dashboard']);
+    if (this.authService.isLoggedIn()) {
+      // this.router.navigate(['/dashboard']);
     }
   }
-  logout(){
+  logout() {
     this.authService.logout();
     this.router.navigate(['']);
   }

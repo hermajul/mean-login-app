@@ -10,29 +10,29 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  user      :   Object;
-  response  :   any;
+  user:   Object;
+  response:   any;
 
   constructor(
     private authService: AuthenticationService,
-    private router      : Router
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.user = {
-      email     : "",
-      password  : ""
-    }
+      email     : '',
+      password  : ''
+    };
     this.response = {
       success : true,
-      msg     : ""
-    }
+      msg     : ''
+    };
   }
 
-  submit(){
+  submit() {
     this.authService.signin(this.user).subscribe(data => {
-      var res = JSON.parse(data._body);
-        if(res.success) {
+      const res = JSON.parse(data._body);
+        if (res.success) {
           this.authService.setSession(res.token);
           this.router.navigate(['dashboard']);
         } else {

@@ -10,15 +10,15 @@ import {JwtHelperService} from '@auth0/angular-jwt';
 export class DashboardService {
 
   constructor(
-    private http  : Http,
-    private authService : AuthenticationService
+    private http: Http,
+    private authService: AuthenticationService
   ) { }
 
-  dashboard():Observable<any> {
-    let headers = new Headers();
+  dashboard(): Observable<any> {
+    const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.authService.getToken());
-    return this.http.post('dashboard/welcome',{}, {headers: headers});
+    return this.http.post('dashboard/welcome', {}, {headers: headers});
   }
 
 }

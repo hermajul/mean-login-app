@@ -1,4 +1,3 @@
-// const validator = require('email-validator');
 const validator = require('validator');
 const passwordValidator = require('password-validator');
 const User = require('../models/user');
@@ -20,6 +19,7 @@ module.exports.nameValidation = function nameValidation(obj) {
     return { valid: false, msg: 'wrong message format' };
   }
 };
+
 module.exports.pwValidation = function pwValidation(obj) {
   try {
     const pw = obj.pw;
@@ -66,6 +66,7 @@ module.exports.pwValidation = function pwValidation(obj) {
     return { valid: false, msg: 'wrong message format' };
   }
 };
+
 module.exports.emailValidation = async function emailValidation(obj) {
   try {
     const email = obj.email;
@@ -86,6 +87,7 @@ module.exports.emailValidation = async function emailValidation(obj) {
     return { valid: false, msg: 'wrong message format' };
   }
 };
+
 module.exports.emailValidationOnUpdate = async function emailValidationOnUpdate(obj) {
   try {
     const newEmail = obj.newEmail;

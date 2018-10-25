@@ -32,3 +32,4 @@ export class ValidationService {
     return this.http.post('validators/pwvalidator', pw, {headers: headers});
   }
 }
+

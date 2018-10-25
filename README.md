@@ -21,7 +21,7 @@ or
 node app.js
 ```
 
-### Mocah test
+### Mocha test
 Start the Application
 ```sh
 npm test

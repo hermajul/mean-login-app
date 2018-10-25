@@ -47,11 +47,11 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const appRoutes: Routes =  [
-  {path:'', component: LoginComponent},
-  {path:'signup', component: SignupComponent},
-  {path:'profile', component: ProfileComponent},
-  {path:'dashboard', component: DashboardComponent},
-]
+  {path: '', component: LoginComponent},
+  {path: 'signup', component: SignupComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'dashboard', component: DashboardComponent},
+];
 
 
 @NgModule({

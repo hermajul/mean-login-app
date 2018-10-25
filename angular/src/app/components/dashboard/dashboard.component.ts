@@ -9,10 +9,10 @@ import { DashboardService} from 'src/app/services/dashboard/dashboard.service';
 })
 export class DashboardComponent implements OnInit {
 
-  content : any;
+  content: any;
 
   constructor(
-    private dashService : DashboardService
+    private dashService: DashboardService
   ) { }
 
   ngOnInit() {

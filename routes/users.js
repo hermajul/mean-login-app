@@ -6,10 +6,25 @@ const config = require('../config/config');
 const User = require('../models/user');
 const validators = require('../scripts/validators');
 
-// register new user
+/**
+* Register a new User
+*
+* @api {post} /users/signup
+* @apiName users
+* @apiHeader (header) {String} Content-Type 'application/json'.
+* @apiParam {JSON} body { name: 'John Doe', email: 'John@doe.de, password: 'passw0rd }
+* @apiSuccess {JSON} body When message is valid returns one of the following:
+* { success: true, msg: 'User registered' }
+* { success: false, msg: 'Failed to register user' }
+* { success: false, msg: [reason1,reason2,...] }
+* { success: false, msg: 'wrong message format' }
+*/
 router.post('/signup', (req, res) => {
   const newUser = req.body;
   let responseMsg = [];
+  if (newUser.email === undefined || newUser.password === undefined || newUser.name === undefined) {
+    res.json({ success: false, msg: 'wrong message format' });
+  }
 
   const nameValid = validators.nameValidation({ name: newUser.name });
   const pwValid = validators.pwValidation({ pw: newUser.password });
@@ -41,12 +56,27 @@ router.post('/signup', (req, res) => {
     );
 });
 
-// update user info
+/**
+* Update a existing user
+*
+* @api {post} /users/update
+* @apiName users
+* @apiHeader (header) {String} Content-Type 'application/json'.
+* @apiHeader (header) {String} Authorization jwt.
+* @apiParam {JSON} body { name: 'John Doe', email: 'John@doe.de, password: 'passw0rd }
+* @apiSuccess {JSON} body When message is valid returns one of the following:
+* { success: true, msg: 'User updated' }
+* { success: false, msg: 'Failed to update user' }
+* { success: false, msg: [reason1,reason2,..] }
+* { success: false, msg: 'wrong message format' }
+*/
 router.post('/update', passport.authenticate('jwt', { session: false }), (req, res) => {
   const oldUser = req.user;
   const newUser = req.body;
   let responseMsg = [];
-
+  if (newUser.email === undefined || newUser.password === undefined || newUser.name === undefined) {
+    res.json({ success: false, msg: 'wrong message format' });
+  }
   const nameValid = validators.nameValidation({ name: newUser.name });
   const pwValid = validators.pwValidation({ pw: newUser.password });
   let emailValid;
@@ -80,10 +110,25 @@ router.post('/update', passport.authenticate('jwt', { session: false }), (req, r
     );
 });
 
-// Authenticate and return token
+/**
+* Signin a existing user and get a token
+*
+* @api {post} /users/signin
+* @apiName users
+* @apiHeader (header) {String} Content-Type 'application/json'.
+* @apiParam {JSON} body { email: 'John@doe.de, password: 'passw0rd }
+* @apiSuccess {JSON} body When message is valid returns one of the following:
+* { success: false, msg: 'Email not registered' }
+* { success: false, msg: 'Wrong password' }
+* { success: false, msg: 'wrong message format' }
+* { success: true, token: `JWT ...`, user: { id:4837209840, name: John Doe, email: John@doe.de}}
+*/
 router.post('/signin', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
+  if (email === undefined || password === undefined) {
+    res.json({ success: false, msg: 'wrong message format' });
+  }
 
   User.getUserByEmail(email, (err, user) => {
     if (err) {
@@ -116,13 +161,17 @@ router.post('/signin', (req, res) => {
   });
 });
 
-// return Profile Info
-router.post('/getprofile', passport.authenticate('jwt', { session: false }), (req, res) => {
-  // console.log(req)
-  res.json({ user: req.user });
-});
-
-// delete user
+/**
+* Delete a existing user
+*
+* @api {post} /users/delete
+* @apiName users
+* @apiHeader (header) {String} Content-Type 'application/json'.
+* @apiHeader (header) {String} Authorization jwt.
+* @apiSuccess {JSON} body When message is valid returns one of the following:
+* { success: true, msg: 'User deleted' }
+* { success: false, msg: 'Failed to delete user' }
+*/
 router.post('/delete', passport.authenticate('jwt', { session: false }), (req, res) => {
   User.deleteUser(req.user, (err) => {
     if (err) {
@@ -132,5 +181,13 @@ router.post('/delete', passport.authenticate('jwt', { session: false }), (req, r
     }
   });
 });
+
+
+// return Profile Info
+router.post('/getprofile', passport.authenticate('jwt', { session: false }), (req, res) => {
+  // console.log(req)
+  res.json({ user: req.user });
+});
+
 
 module.exports = router;

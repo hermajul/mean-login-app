@@ -9,65 +9,64 @@ import {JwtHelperService} from '@auth0/angular-jwt';
 })
 export class AuthenticationService {
 
-  token : any;
-  user  : any;
+  token: any;
+  user: any;
 
   constructor(
-    private http  : Http,
+    private http: Http,
     ) { }
-  
-  getUser(){
+
+  getUser() {
     this.loadToken();
     return this.user;
   }
-  getToken(){
+  getToken() {
     this.loadToken();
     return this.token;
-  }    
+  }
 
-  signin(user):Observable<any> {
-    let headers = new Headers();
+  signin(user): Observable<any> {
+    const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('users/signin', user, {headers: headers});
   }
-  signup(user):Observable<any> {
-    let headers = new Headers();
+  signup(user): Observable<any> {
+    const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('users/signup', user, {headers: headers});
   }
   setSession(token) {
-    let helper = new JwtHelperService();
-    let decoded = helper.decodeToken(token);
+    const helper = new JwtHelperService();
+    const decoded = helper.decodeToken(token);
     localStorage.setItem('id_token', token);
     localStorage.setItem('user', JSON.stringify(decoded.data));
-    localStorage.setItem
     this.token = token;
     this.user = decoded.data;
-  } 
+  }
   loadToken() {
-    let token = localStorage.getItem('id_token');
-    let user  = JSON.parse(localStorage.getItem('user'));
+    const token = localStorage.getItem('id_token');
+    const user  = JSON.parse(localStorage.getItem('user'));
     this.token  = token;
     this.user   = user;
   }
-  isLoggedIn(){
-    let helper = new JwtHelperService();
+  isLoggedIn() {
+    const helper = new JwtHelperService();
     this.loadToken();
     return !helper.isTokenExpired(this.token);
-  } 
+  }
   logout() {
     this.token  = null;
     this.user   = null;
     localStorage.clear();
   }
-  updateUser(newuser):Observable<any> {
-    let headers = new Headers();
+  updateUser(newuser): Observable<any> {
+    const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.token);
     return this.http.post('users/update', newuser, {headers: headers});
   }
-  getuser(users):Observable<any> {
-    let headers = new Headers();
+  getuser(users): Observable<any> {
+    const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.token);
     return this.http.post('users/getprofile', users, {headers: headers});
