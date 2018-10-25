@@ -21,3 +21,9 @@ or
 node app.js
 ```
 
+### Mocah test
+Start the Application
+```sh
+npm test
+```
+

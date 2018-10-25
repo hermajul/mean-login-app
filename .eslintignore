@@ -1,4 +1,2 @@
 # Ignore test files
-spec/*
-tests/*
 test/*
