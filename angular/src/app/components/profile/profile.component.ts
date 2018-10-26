@@ -3,6 +3,9 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import { ValidationService } from 'src/app/services/validation.service';
 import { FormControl, AbstractControl } from '@angular/forms';
 import { map } from 'rxjs/operators';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {ConfirmDialogComponent} from './dialog/confirm-dialog/confirm-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -20,7 +23,9 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private authService: AuthenticationService,
-    private validService: ValidationService
+    private validService: ValidationService,
+    public dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -132,6 +137,26 @@ export class ProfileComponent implements OnInit {
         control.setErrors(val);
       } else {
         control.setErrors(null);
+      }
+    });
+  }
+
+  confirmDelete() {
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '500px',
+      data: {title: 'Delete', message: 'Are you sure you want to delete the account?'}
+    });
+    dialogRef.afterClosed().subscribe(response => {
+      if (response === true) {
+        this.authService.deleteUser().subscribe(payload => {
+          const result = JSON.parse(payload._body);
+            if (result.success) {
+              this.authService.logout();
+              this.router.navigate(['']);
+            } else {
+              this.response = result;
+            }
+        });
       }
     });
   }

@@ -186,12 +186,4 @@ router.post('/delete', passport.authenticate('jwt', { session: false }), (req, r
   });
 });
 
-
-// return Profile Info
-router.post('/getprofile', passport.authenticate('jwt', { session: false }), (req, res) => {
-  // console.log(req)
-  res.json({ user: req.user });
-});
-
-
 module.exports = router;

@@ -30,7 +30,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2FwcC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -107,12 +107,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/signup/signup.component */ "./src/app/components/signup/signup.component.ts");
 /* harmony import */ var _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/profile/profile.component */ "./src/app/components/profile/profile.component.ts");
 /* harmony import */ var _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/dashboard/dashboard.component */ "./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var _components_profile_dialog_confirm_dialog_confirm_dialog_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/profile/dialog/confirm-dialog/confirm-dialog.component */ "./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -146,7 +148,8 @@ var AppModule = /** @class */ (function () {
                 _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"],
                 _components_signup_signup_component__WEBPACK_IMPORTED_MODULE_13__["SignupComponent"],
                 _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_14__["ProfileComponent"],
-                _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_15__["DashboardComponent"]
+                _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_15__["DashboardComponent"],
+                _components_profile_dialog_confirm_dialog_confirm_dialog_component__WEBPACK_IMPORTED_MODULE_16__["ConfirmDialogComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -185,7 +188,8 @@ var AppModule = /** @class */ (function () {
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"]
             ],
             providers: [_services_authentication_service__WEBPACK_IMPORTED_MODULE_11__["AuthenticationService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]],
+            entryComponents: [_components_profile_dialog_confirm_dialog_confirm_dialog_component__WEBPACK_IMPORTED_MODULE_16__["ConfirmDialogComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -202,7 +206,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJjb21wb25lbnRzL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LmNzcyJ9 */"
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZGFzaGJvYXJkL2Rhc2hib2FyZC5jb21wb25lbnQuY3NzIn0= */"
 
 /***/ }),
 
@@ -272,7 +276,7 @@ var DashboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "mat-form-field{\n    width: 100%\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvbG9naW4vbG9naW4uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7Q0FDZCIsImZpbGUiOiJjb21wb25lbnRzL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJtYXQtZm9ybS1maWVsZHtcbiAgICB3aWR0aDogMTAwJVxufSJdfQ== */"
+module.exports = "mat-form-field{\n    width: 100%\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztDQUNkIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9sb2dpbi9sb2dpbi5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibWF0LWZvcm0tZmllbGR7XG4gICAgd2lkdGg6IDEwMCVcbn0iXX0= */"
 
 /***/ }),
 
@@ -319,12 +323,12 @@ var LoginComponent = /** @class */ (function () {
     }
     LoginComponent.prototype.ngOnInit = function () {
         this.user = {
-            email: "",
-            password: ""
+            email: '',
+            password: ''
         };
         this.response = {
             success: true,
-            msg: ""
+            msg: ''
         };
     };
     LoginComponent.prototype.submit = function () {
@@ -363,7 +367,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".fill-remaining-space {\n    /* This fills the remaining space, by using flexbox. \n       Every toolbar row uses a flexbox row layout. */\n    flex: 1 1 auto;\n  }\n.sidenav{\n    width: 200px;\n    background-color: gainsboro;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0k7c0RBQ2tEO0lBQ2xELGVBQWU7R0FDaEI7QUFDSDtJQUNJLGFBQWE7SUFDYiw0QkFBNEI7Q0FDL0IiLCJmaWxlIjoiY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZmlsbC1yZW1haW5pbmctc3BhY2Uge1xuICAgIC8qIFRoaXMgZmlsbHMgdGhlIHJlbWFpbmluZyBzcGFjZSwgYnkgdXNpbmcgZmxleGJveC4gXG4gICAgICAgRXZlcnkgdG9vbGJhciByb3cgdXNlcyBhIGZsZXhib3ggcm93IGxheW91dC4gKi9cbiAgICBmbGV4OiAxIDEgYXV0bztcbiAgfVxuLnNpZGVuYXZ7XG4gICAgd2lkdGg6IDIwMHB4O1xuICAgIGJhY2tncm91bmQtY29sb3I6IGdhaW5zYm9ybztcbn1cbiJdfQ== */"
+module.exports = ".fill-remaining-space {\n    /* This fills the remaining space, by using flexbox. \n       Every toolbar row uses a flexbox row layout. */\n    flex: 1 1 auto;\n  }\n.sidenav{\n    width: 200px;\n    background-color: gainsboro;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSTtzREFDa0Q7SUFDbEQsZUFBZTtHQUNoQjtBQUNIO0lBQ0ksYUFBYTtJQUNiLDRCQUE0QjtDQUMvQiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvbmF2YmFyL25hdmJhci5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmZpbGwtcmVtYWluaW5nLXNwYWNlIHtcbiAgICAvKiBUaGlzIGZpbGxzIHRoZSByZW1haW5pbmcgc3BhY2UsIGJ5IHVzaW5nIGZsZXhib3guIFxuICAgICAgIEV2ZXJ5IHRvb2xiYXIgcm93IHVzZXMgYSBmbGV4Ym94IHJvdyBsYXlvdXQuICovXG4gICAgZmxleDogMSAxIGF1dG87XG4gIH1cbi5zaWRlbmF2e1xuICAgIHdpZHRoOiAyMDBweDtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiBnYWluc2Jvcm87XG59XG4iXX0= */"
 
 /***/ }),
 
@@ -414,7 +418,7 @@ var NavbarComponent = /** @class */ (function () {
     }
     NavbarComponent.prototype.ngOnInit = function () {
         if (this.authService.isLoggedIn()) {
-            //this.router.navigate(['/dashboard']);
+            // this.router.navigate(['/dashboard']);
         }
     };
     NavbarComponent.prototype.logout = function () {
@@ -438,6 +442,78 @@ var NavbarComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.css":
+/*!***************************************************************************************!*\
+  !*** ./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.css ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZmlsZS9kaWFsb2cvY29uZmlybS1kaWFsb2cvY29uZmlybS1kaWFsb2cuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.html":
+/*!****************************************************************************************!*\
+  !*** ./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.html ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 mat-dialog-title>{{data.title}}</h1>\n<div mat-dialog-content>\n  <p>{{data.message}}</p>\n</div>\n<div mat-dialog-actions align=\"end\">\n  <button mat-button [mat-dialog-close]=\"false\">No</button>\n  <button mat-button [mat-dialog-close]=\"true\" cdkFocusInitial>Yes</button>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.ts":
+/*!**************************************************************************************!*\
+  !*** ./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.ts ***!
+  \**************************************************************************************/
+/*! exports provided: ConfirmDialogComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConfirmDialogComponent", function() { return ConfirmDialogComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+var ConfirmDialogComponent = /** @class */ (function () {
+    function ConfirmDialogComponent(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
+    }
+    ConfirmDialogComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    ConfirmDialogComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-confirm-dialog',
+            template: __webpack_require__(/*! ./confirm-dialog.component.html */ "./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.html"),
+            styles: [__webpack_require__(/*! ./confirm-dialog.component.css */ "./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.css")]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object])
+    ], ConfirmDialogComponent);
+    return ConfirmDialogComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/profile/profile.component.css":
 /*!**********************************************************!*\
   !*** ./src/app/components/profile/profile.component.css ***!
@@ -445,7 +521,7 @@ var NavbarComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "mat-form-field{\n    width: 100%\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvcHJvZmlsZS9wcm9maWxlLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0NBQ2QiLCJmaWxlIjoiY29tcG9uZW50cy9wcm9maWxlL3Byb2ZpbGUuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIm1hdC1mb3JtLWZpZWxke1xuICAgIHdpZHRoOiAxMDAlXG59Il19 */"
+module.exports = "mat-form-field{\n    width: 100%\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wcm9maWxlL3Byb2ZpbGUuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7Q0FDZCIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvcHJvZmlsZS9wcm9maWxlLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJtYXQtZm9ybS1maWVsZHtcbiAgICB3aWR0aDogMTAwJVxufSJdfQ== */"
 
 /***/ }),
 
@@ -456,7 +532,7 @@ module.exports = "mat-form-field{\n    width: 100%\n}\n/*# sourceMappingURL=data
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container mt-4\">\n    <div class=\"row\">\n        <div class=\"col-md-6 offset-md-3\">\n          <form class=\"login-form\">\n            <mat-card class=\"login-card\">\n                <mat-card-header>                    \n                    <mat-card-title>User Info</mat-card-title>\n                  </mat-card-header>\n                  <mat-card-content>\n                        <mat-form-field >\n                                <input matInput placeholder=\"Name\" [formControl]=\"nameControl\" required>\n                                <mat-error *ngIf=\"nameControl.hasError('nameValidator')\">{{nameControl.errors.nameValidatorMsg}}</mat-error>\n                            </mat-form-field>                        \n                            <br>\n                            <br>                    \n                            <mat-form-field >\n                                <input matInput placeholder=\"Email\" [formControl]=\"emailControl\" required>\n                                <mat-error *ngIf=\"emailControl.hasError('emailValidator')\">{{this.emailControl.errors.emailValidatorMsg}}</mat-error>\n                            </mat-form-field>  \n                            <br>\n                            <br>\n                            <mat-form-field>\n                                <input matInput placeholder=\"Password\" [type]=\"!hide ? 'password' : 'text'\" [formControl]=\"pwControl\" required>\n                                <mat-icon matSuffix (click)=\"hide = !hide\">{{!hide ? 'visibility' : 'visibility_off'}}</mat-icon>\n                                <mat-error *ngIf=\"pwControl.hasError('pwValidator')\"><span *ngFor=\"let item of pwControl.errors.pwValidatorMsg\">{{item}}<br></span></mat-error>   \n                            </mat-form-field>                     \n                  </mat-card-content>\n                  <mat-card-actions align=\"end\">\n                    <button  mat-raised-button color=\"primary\" *ngIf=\"!edit\"(click)=\"editMode(true)\"><mat-icon>create</mat-icon> edit</button>\n                    <button  mat-raised-button color=\"primary\" *ngIf=\"edit\" (click)=\"editMode(false)\">discard changes</button>\n                    <button  mat-raised-button color=\"primary\" *ngIf=\"edit\" (click)=\"submit()\" [disabled]=\"!nameControl.valid || !emailControl.valid || !pwControl.valid\">save changes</button>\n                  </mat-card-actions>\n              </mat-card>\n            </form>\n        </div>       \n    </div>\n  </div>"
+module.exports = "<div class=\"container mt-4\">\n    <div class=\"row\">\n        <div class=\"col-md-6 offset-md-3\">\n          <form class=\"login-form\">\n            <mat-card class=\"login-card\">\n                <mat-card-header>                    \n                    <mat-card-title>User Info</mat-card-title>\n                  </mat-card-header>\n                  <mat-card-content>\n                        <mat-form-field >\n                                <input matInput placeholder=\"Name\" [formControl]=\"nameControl\" required>\n                                <mat-error *ngIf=\"nameControl.hasError('nameValidator')\">{{nameControl.errors.nameValidatorMsg}}</mat-error>\n                            </mat-form-field>                        \n                            <br>\n                            <br>                    \n                            <mat-form-field >\n                                <input matInput placeholder=\"Email\" [formControl]=\"emailControl\" required>\n                                <mat-error *ngIf=\"emailControl.hasError('emailValidator')\">{{this.emailControl.errors.emailValidatorMsg}}</mat-error>\n                            </mat-form-field>  \n                            <br>\n                            <br>\n                            <mat-form-field>\n                                <input matInput placeholder=\"Password\" [type]=\"!hide ? 'password' : 'text'\" [formControl]=\"pwControl\" required>\n                                <mat-icon matSuffix (click)=\"hide = !hide\">{{!hide ? 'visibility' : 'visibility_off'}}</mat-icon>\n                                <mat-error *ngIf=\"pwControl.hasError('pwValidator')\"><span *ngFor=\"let item of pwControl.errors.pwValidatorMsg\">{{item}}<br></span></mat-error>   \n                            </mat-form-field>                     \n                  </mat-card-content>\n                  <mat-card-actions align=\"end\">\n                    <button  mat-raised-button color=\"warn\" *ngIf=\"!edit\"(click)=\"confirmDelete()\"><mat-icon>delete_outline</mat-icon> delete</button>\n                    <button  mat-raised-button color=\"primary\" *ngIf=\"!edit\"(click)=\"editMode(true)\"><mat-icon>create</mat-icon> edit</button>\n                    <button  mat-raised-button color=\"primary\" *ngIf=\"edit\" (click)=\"editMode(false)\">discard changes</button>\n                    <button  mat-raised-button color=\"primary\" *ngIf=\"edit\" (click)=\"submit()\" [disabled]=\"!nameControl.valid || !emailControl.valid || !pwControl.valid\">save changes</button>\n                    <mat-error *ngIf=\"!response.success\">{{this.response.msg}}</mat-error>\n                  </mat-card-actions>\n              </mat-card>\n            </form>\n        </div>       \n    </div>\n  </div>"
 
 /***/ }),
 
@@ -475,6 +551,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_validation_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/validation.service */ "./src/app/services/validation.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _dialog_confirm_dialog_confirm_dialog_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dialog/confirm-dialog/confirm-dialog.component */ "./src/app/components/profile/dialog/confirm-dialog/confirm-dialog.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -489,17 +568,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var ProfileComponent = /** @class */ (function () {
-    function ProfileComponent(authService, validService) {
+    function ProfileComponent(authService, validService, dialog, router) {
         this.authService = authService;
         this.validService = validService;
+        this.dialog = dialog;
+        this.router = router;
     }
     ProfileComponent.prototype.ngOnInit = function () {
         this.newuser = {
             _id: this.authService.user._id,
             name: this.authService.user.name,
             email: this.authService.user.email,
-            password: ""
+            password: ''
         };
         this.nameControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: this.authService.user['name'], disabled: true }, { validators: [this.nameValidator.bind(this)], updateOn: 'blur' });
         this.emailControl = new _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormControl"]({ value: this.authService.user['email'], disabled: true }, [this.emailValidator.bind(this)]);
@@ -507,7 +591,7 @@ var ProfileComponent = /** @class */ (function () {
         this.edit = false;
         this.response = {
             success: true,
-            msg: ""
+            msg: ''
         };
     };
     ProfileComponent.prototype.editMode = function (state) {
@@ -540,18 +624,18 @@ var ProfileComponent = /** @class */ (function () {
             var res = JSON.parse(data._body);
             if (res.success) {
                 _this.editMode(false);
-                _this.authService.signin(user).subscribe(function (data) {
-                    var res = JSON.parse(data._body);
-                    if (res.success) {
-                        _this.authService.setSession(res.token);
+                _this.authService.signin(user).subscribe(function (payload) {
+                    var result = JSON.parse(payload._body);
+                    if (result.success) {
+                        _this.authService.setSession(result.token);
                         user = null;
-                        _this.newuser['password'] = "";
-                        _this.pwControl.setValue("");
+                        _this.newuser['password'] = '';
+                        _this.pwControl.setValue('');
                         _this.nameControl.setValue(_this.authService.user['name']);
                         _this.emailControl.setValue(_this.authService.user['email']);
                     }
                     else {
-                        _this.response = res;
+                        _this.response = result;
                     }
                 });
             }
@@ -602,6 +686,27 @@ var ProfileComponent = /** @class */ (function () {
             }
         });
     };
+    ProfileComponent.prototype.confirmDelete = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(_dialog_confirm_dialog_confirm_dialog_component__WEBPACK_IMPORTED_MODULE_6__["ConfirmDialogComponent"], {
+            width: '500px',
+            data: { title: 'Delete', message: 'Are you sure you want to delete the account?' }
+        });
+        dialogRef.afterClosed().subscribe(function (response) {
+            if (response === true) {
+                _this.authService.deleteUser().subscribe(function (payload) {
+                    var result = JSON.parse(payload._body);
+                    if (result.success) {
+                        _this.authService.logout();
+                        _this.router.navigate(['']);
+                    }
+                    else {
+                        _this.response = result;
+                    }
+                });
+            }
+        });
+    };
     ProfileComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-profile',
@@ -609,7 +714,9 @@ var ProfileComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./profile.component.css */ "./src/app/components/profile/profile.component.css")]
         }),
         __metadata("design:paramtypes", [src_app_services_authentication_service__WEBPACK_IMPORTED_MODULE_1__["AuthenticationService"],
-            src_app_services_validation_service__WEBPACK_IMPORTED_MODULE_2__["ValidationService"]])
+            src_app_services_validation_service__WEBPACK_IMPORTED_MODULE_2__["ValidationService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_7__["Router"]])
     ], ProfileComponent);
     return ProfileComponent;
 }());
@@ -625,7 +732,7 @@ var ProfileComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "mat-form-field{\n    width: 100%\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztDQUNkIiwiZmlsZSI6ImNvbXBvbmVudHMvc2lnbnVwL3NpZ251cC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsibWF0LWZvcm0tZmllbGR7XG4gICAgd2lkdGg6IDEwMCVcbn0iXX0= */"
+module.exports = "mat-form-field{\n    width: 100%\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9zaWdudXAvc2lnbnVwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0NBQ2QiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRzL3NpZ251cC9zaWdudXAuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIm1hdC1mb3JtLWZpZWxke1xuICAgIHdpZHRoOiAxMDAlXG59Il19 */"
 
 /***/ }),
 
@@ -811,7 +918,6 @@ var AuthenticationService = /** @class */ (function () {
         var decoded = helper.decodeToken(token);
         localStorage.setItem('id_token', token);
         localStorage.setItem('user', JSON.stringify(decoded.data));
-        localStorage.setItem;
         this.token = token;
         this.user = decoded.data;
     };
@@ -837,11 +943,12 @@ var AuthenticationService = /** @class */ (function () {
         headers.append('Authorization', this.token);
         return this.http.post('users/update', newuser, { headers: headers });
     };
-    AuthenticationService.prototype.getuser = function (users) {
+    AuthenticationService.prototype.deleteUser = function () {
+        this.loadToken();
         var headers = new _angular_http__WEBPACK_IMPORTED_MODULE_1__["Headers"]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', this.token);
-        return this.http.post('users/getprofile', users, { headers: headers });
+        return this.http.post('users/delete', {}, { headers: headers });
     };
     AuthenticationService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

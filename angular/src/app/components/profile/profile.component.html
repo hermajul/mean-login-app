@@ -26,9 +26,11 @@
                             </mat-form-field>                     
                   </mat-card-content>
                   <mat-card-actions align="end">
+                    <button  mat-raised-button color="warn" *ngIf="!edit"(click)="confirmDelete()"><mat-icon>delete_outline</mat-icon> delete</button>
                     <button  mat-raised-button color="primary" *ngIf="!edit"(click)="editMode(true)"><mat-icon>create</mat-icon> edit</button>
                     <button  mat-raised-button color="primary" *ngIf="edit" (click)="editMode(false)">discard changes</button>
                     <button  mat-raised-button color="primary" *ngIf="edit" (click)="submit()" [disabled]="!nameControl.valid || !emailControl.valid || !pwControl.valid">save changes</button>
+                    <mat-error *ngIf="!response.success">{{this.response.msg}}</mat-error>
                   </mat-card-actions>
               </mat-card>
             </form>

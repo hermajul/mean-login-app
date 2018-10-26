@@ -45,6 +45,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ConfirmDialogComponent } from './components/profile/dialog/confirm-dialog/confirm-dialog.component';
 
 const appRoutes: Routes =  [
   {path: '', component: LoginComponent},
@@ -61,7 +62,8 @@ const appRoutes: Routes =  [
     LoginComponent,
     SignupComponent,
     ProfileComponent,
-    DashboardComponent
+    DashboardComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -100,6 +102,7 @@ const appRoutes: Routes =  [
     ReactiveFormsModule
   ],
   providers: [AuthenticationService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [ConfirmDialogComponent]
 })
 export class AppModule { }

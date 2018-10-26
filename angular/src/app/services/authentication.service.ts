@@ -65,10 +65,11 @@ export class AuthenticationService {
     headers.append('Authorization', this.token);
     return this.http.post('users/update', newuser, {headers: headers});
   }
-  getuser(users): Observable<any> {
+  deleteUser(): Observable<any> {
+    this.loadToken();
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', this.token);
-    return this.http.post('users/getprofile', users, {headers: headers});
+    return this.http.post('users/delete', {}, {headers: headers});
   }
 }
